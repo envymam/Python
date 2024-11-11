@@ -90,6 +90,11 @@ def custom_confirmation(message):
     Button(confirmation_window, text='OK', command=confirmation_window.destroy).pack(pady=10)
 
 #en klass för att hantera ett bibliotek av artister, band och album
+#använder library för att organisera data: håller reda på artister, band och album i form av dictionaries.
+#Den har separata dictionaries för varje kategori(self.artists, self.bands, self.albums)
+#central hantering: library gör att allt kan hanteras centralt. Istället för att ha separata variabler för artister, band och album, har vi ett centralt objekt som samlar all data och funktioner relaterade till
+#lagra och ladda data: innehåller funktioner(save_data och load_data) som sparar datan till en JSON-fil när användaren lägger till eller ändrar ngt.
+
 class ArtistInfoLibrary:
 
     def __init__(self):
