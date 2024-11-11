@@ -328,6 +328,10 @@ root.geometry('800x600')#sätter storleken på fönstret
 library = ArtistInfoLibrary()
 
 #Lägg till knappar för att interagera med systemet
+#lambda: i programmet används lmabda för att skicka funktioner som argument till command-parametern i Tkinter-knapparna
+#lambda: lambda skapar en anonym funktion som anropar add_artist funktionen och skcikar med library som argument.
+#lambda: command=: I Tkinter kan vi tilldela en funktion till command parametern för att bestämma vad som ska hända när knappen klickas
+#lambda: utan lambda skulle det vara svårt att skicka med librar som argument eftersom Ktinker endast accepterar en funktion utan arg för command-param
 tk.Button(root, text='Lägg till Artist', command=lambda: add_artist(library)).pack(pady=5)
 tk.Button(root, text="Lägg till Band", command=lambda: add_band(library)).pack(pady=5)
 tk.Button(root, text="Lägg till Artist till Band", command=lambda: add_artist_to_band(library)).pack(pady=5)
