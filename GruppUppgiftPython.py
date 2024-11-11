@@ -65,6 +65,8 @@ class Band:
 
     def add_member(self, artist, instrument):
         #lägger till en artist och det instrument artisten spelar till bandets medlammar
+
+        #self.members är en dictionary där varje medlem(artist) är en nyckel och instrument är värdet.
         self.members[artist.name] = instrument #lägger till artsten i members-dictionary med instrument
 
 #klass för att representera ett album med namn, släppår och koppling till en artist eller ett band
@@ -105,6 +107,9 @@ class ArtistInfoLibrary:
         self.albums ={}
         self.load_data() #laddar data när programmet startas
 
+    #denne metod skapar en data-dictionary som strukturerar all info om artister, band och album.
+    #sparar datan till data.json med json.dump
+    #JSON stöder dictionary och listor
     def save_data(self):
         print('Sparar data till JSON')
         #sparar data om artister
@@ -117,7 +122,7 @@ class ArtistInfoLibrary:
             json.dump(data, file, indent=4)
             print('data sparad')
 
-    
+    #öppnar och laddar data.json om den finns och återskapar objekten för artister, badn och album
     def load_data(self):
         #laddar data om artister, band och album från en JSON-fil om den finns.
         try:
